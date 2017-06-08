@@ -30,7 +30,6 @@ public class responderimg : MonoBehaviour
     private float acertos;
     private float questoes;
     private float media;
-    private int notaf;
     private float timeLeft = 15.0f;
     private float scoregame;
 
@@ -111,17 +110,15 @@ public class responderimg : MonoBehaviour
         {
 
 
-            media = 10 * (acertos / questoes);
-            notaf = Mathf.RoundToInt(media);
+            
 
-            if(notaf> PlayerPrefs.GetInt("notaf" + idtema.ToString()))
+            if(scoregame> PlayerPrefs.GetInt("Score" + idtema.ToString()))
             {
-				PlayerPrefs.SetInt("notaf" + idtema.ToString(),notaf);
-                PlayerPrefs.SetInt("acertos" + idtema.ToString(),(int) notaf);
+                PlayerPrefs.SetInt("acertos" + idtema.ToString(),(int)acertos);
                 PlayerPrefs.SetInt("Score" + idtema.ToString(), (int)scoregame);
             }
-            PlayerPrefs.SetInt("notaftemp" + idtema.ToString(), notaf);
-            PlayerPrefs.SetInt("acertostemp" + idtema.ToString(), (int)notaf);
+            
+            PlayerPrefs.SetInt("acertostemp" + idtema.ToString(), (int)acertos);
             PlayerPrefs.SetInt("Scoretemp" + idtema.ToString(), (int)scoregame);
 
             SceneManager.LoadScene("nota");

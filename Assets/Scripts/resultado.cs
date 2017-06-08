@@ -9,7 +9,6 @@ public class resultado : MonoBehaviour
 
     private int idTema;
 
-    public Text txtNota;
     public Text txtInfoTema;
     public Text score;
 
@@ -17,7 +16,6 @@ public class resultado : MonoBehaviour
     public GameObject estrela2;
     public GameObject estrela3;
 
-    private int notaf;
     private int acertos;
     private int scoregame;
     private int maiorscore;
@@ -32,30 +30,27 @@ public class resultado : MonoBehaviour
         estrela3.SetActive(false);
 
         
-        notaf = PlayerPrefs.GetInt("notaftemp" + idTema.ToString());
         acertos = PlayerPrefs.GetInt("acertostemp" + idTema.ToString());
         scoregame= PlayerPrefs.GetInt("Scoretemp" + idTema.ToString());
+
+        score.text = scoregame.ToString();
+        txtInfoTema.text = "Você Acertou " + acertos.ToString() + " de 10 Capitais";
         
 
-
-        txtNota.text = notaf.ToString();
-        txtInfoTema.text = "Você Acertou " + acertos.ToString() + " de 10 Capitais";
-        score.text = scoregame.ToString();
-
-        if (notaf == 10)
+        if (scoregame == 900)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(true);
             estrela3.SetActive(true);
 
         }
-        else if (notaf >= 7)
+        else if (scoregame >= 700)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(true);
             estrela3.SetActive(false);
         }
-        else if (notaf >= 5)
+        else if (scoregame >= 500)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(false);

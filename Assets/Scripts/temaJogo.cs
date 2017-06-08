@@ -35,28 +35,28 @@ public class temaJogo : MonoBehaviour
     {
         
         PlayerPrefs.SetInt("idtema", idTema);
-        
 
-        int notaFinal = PlayerPrefs.GetInt("notaf" + idTema.ToString());
+
+        int score = PlayerPrefs.GetInt("Score" + idTema.ToString());
         int acertos = PlayerPrefs.GetInt("acertos" + idTema.ToString());
         estrela1.SetActive(false);
         estrela2.SetActive(false);
         estrela3.SetActive(false);
 
-        if (notaFinal == 10)
+        if (score >= 900)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(true);
             estrela3.SetActive(true);
 
         }
-        else if (notaFinal >= 7)
+        else if (score >= 700)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(true);
             estrela3.SetActive(false);
         }
-        else if (notaFinal >= 5)
+        else if (score >= 500)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(false);
@@ -79,5 +79,5 @@ public class temaJogo : MonoBehaviour
     {
         SceneManager.LoadScene("T" + idTema.ToString());
     }
-
+ 
 }

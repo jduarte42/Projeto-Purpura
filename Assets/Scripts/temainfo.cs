@@ -20,24 +20,23 @@ public class temainfo : MonoBehaviour {
         estrela2.SetActive(false);
         estrela3.SetActive(false);
 
-       int notafinal = PlayerPrefs.GetInt("notaf" + idTema.ToString());
-       int score = PlayerPrefs.GetInt("Score" + idTema.ToString());
+        int score = PlayerPrefs.GetInt("Score" + idTema.ToString());
 
 
-        if (notafinal == 10)
+        if (score == 900)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(true);
             estrela3.SetActive(true);
 
         }
-        else if (notafinal >= 7)
+        else if (score >= 700)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(true);
             estrela3.SetActive(false);
         }
-        else if (notafinal >= 5)
+        else if (score >= 500)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(false);
