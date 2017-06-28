@@ -37,7 +37,7 @@ public class resultado : MonoBehaviour
         txtInfoTema.text = "Você Acertou " + acertos.ToString() + " de 10 Capitais";
         
 
-        if (scoregame == 900)
+        if (scoregame  >=   900)
         {
             estrela1.SetActive(true);
             estrela2.SetActive(true);

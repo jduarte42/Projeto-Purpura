@@ -17,7 +17,7 @@ public class temaJogo : MonoBehaviour
     public string[] nometema;
     public int numeroquestoes;
 
-    private int idTema;
+    public int idTema;
 
 
 
@@ -71,8 +71,8 @@ public class temaJogo : MonoBehaviour
     }
     public void random ()
     {
-        idTema = Random.Range(2, 3);
-        txtnometema.text ="O tema escolhido foi:" +  nometema[idTema];
+        idTema = Random.Range(1, 3);
+        txtnometema.text ="O tema escolhido foi: " +  nometema[idTema];
         
     }
     public void jogar()

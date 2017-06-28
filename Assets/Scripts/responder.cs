@@ -17,10 +17,6 @@ public class responder : MonoBehaviour
     public Text inforespostas;
     public Text Displaycontagem;
     
-
-
-
-
     public string[] perguntas;
     public string[] alternativaA;
     public string[] alternativaB;
